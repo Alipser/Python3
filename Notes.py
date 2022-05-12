@@ -24,7 +24,7 @@ Percentage_grade= np.zeros(How_many_grades)
 Score_grade     = np.zeros(How_many_grades)
 
 
-suma=0
+
 for a in Percentage_grade :
       c += 1
       while True:
@@ -37,7 +37,8 @@ for a in Percentage_grade :
             Percentage_grade[c]=float(input(f'your percentage range is over or underated  #{c+1} :'))
             
             
-      suma= suma + Percentage_grade[c]
+      suma= sum(Percentage_grade)
+
       while suma > 100: 
             suma= suma - Percentage_grade[c]
             Percentage_grade[c]=eval(input(f'the value added exceeded the total,\n please correct the percentage  #{c+1} :'))
@@ -57,4 +58,4 @@ for a in Percentage_grade :
       
 Ponderation=(np.multiply(Percentage_grade, Score_grade))/100
 Finalscore=(sum(Ponderation))
-print('Your final score in the subject is :{d}'(Finalscore))
+print(f'Your final score in the subject is {int (Finalscore)}:')
