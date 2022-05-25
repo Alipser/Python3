@@ -30,6 +30,7 @@ for i in range(len(array_encriptado)):
 reorder="".join(reorder)
 reorder=reorder.replace("_","")
 
+
 print(reorder)
 
 
