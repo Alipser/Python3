@@ -19,6 +19,7 @@ def restas(cicloa, ciclob,añoa, añob):
     return(resta)
     
 a=(organizador(Ca, cb,aa, ab))
+print()
 print(restas(a[0], a[1],a[2], a[3]))
 
 
