@@ -1,27 +1,23 @@
-import pandas as pd
-import numpy as np
+
 
 def limpieza(string):
+    import pandas as pd
+    import numpy as np
     delete_char=['-','¿','?','.',',','¡','!',':','"','–',";"]
-    #no_tildes = (
-           # ("á", "a"),
-           # ("é", "e"),
-           # ("í", "i"),
-           # ("ó", "o"),
-           # ("ú", "u"),
-        #)
+    
     
     for i in range(len(delete_char)):
          string= string.replace(delete_char[i],"")
     
-    #for a, b in no_tildes:
-    #         string =  string.replace(a, b)
+    
     
     string= string.lower()
     string= string.split(' ')
     return string
 
 def main(lista_texto):
+    import pandas as pd
+    import numpy as np
     lista_texto=" ".join(lista_texto)
     nlista_texto=limpieza(lista_texto)
     
@@ -31,6 +27,7 @@ def main(lista_texto):
     lista_conteo = pd.DataFrame(( nlista_texto['words'].value_counts().head(20)))
     lista_conteo=lista_conteo.reset_index()
     lista_conteo=lista_conteo.to_numpy().tolist()
+    lista_conteo= sorted(lista_conteo, key = lambda x: (-x[1], x[0]))
 
     
     
